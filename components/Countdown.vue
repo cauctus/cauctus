@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="countdown">
     <div class="svg-circle-container">
       <svg class="svg-circle" viewBox="0 0 100 100">
         <defs>
@@ -24,7 +24,19 @@
       </svg>
     </div>
 
-    {{ formattedTimer }}
+    <div class="countdown-text">
+      <div class="countdown-text-upper">
+        Décompte
+      </div>
+      <div class="countdown-text-middle">
+        {{ formattedTimer }}
+      </div>
+      <div class="countdown-text-bottom">
+        <v-btn text @click="addTime(60)">
+          +1 minute
+        </v-btn>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -49,6 +61,11 @@ export default class Countdown extends Vue {
 
   get formattedTimer() {
     return `${Math.floor(this.remainingSecs / 60).toString().padStart(2, '0')}:${(this.remainingSecs % 60).toString().padStart(2, '0')}`
+  }
+
+  addTime(delta: number) {
+    this.timePassed = this.timePassed - delta < 0 ? 0 : this.timePassed - delta
+    this.duration += delta
   }
 
   startInterval() {
@@ -92,35 +109,54 @@ export default class Countdown extends Vue {
 </script>
 
 <style scoped lang="less">
-.svg-circle-container {
-  width: 300px;
+.countdown {
+  position: relative;
+  display: inline-block;
 
-  .svg-circle {
-    transform: scaleX(-1);
+  .svg-circle-container {
+    width: 300px;
 
-    &-group {
-      fill: none;
-      stroke: none;
+    .svg-circle {
+      transform: scaleX(-1);
+
+      &-group {
+        fill: none;
+        stroke: none;
+      }
+
+      &-total {
+        stroke-width: 4px;
+        stroke: #eee;
+      }
+
+      &-remaining {
+        stroke-width: 4px;
+        stroke-linecap: round;
+        transform: rotate(90deg);
+        transform-origin: center;
+        transition: 1s linear all;
+        fill-rule: nonzero;
+        stroke: url(#gradient);
+      }
+
+      #gradient {
+        --color-stop: #64c4a0;
+        --color-bot: #15889e;
+      }
     }
+  }
 
-    &-total {
-      stroke-width: 4px;
-      stroke: #eee;
-    }
+  .countdown-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 
-    &-remaining {
-      stroke-width: 4px;
-      stroke-linecap: round;
-      transform: rotate(90deg);
-      transform-origin: center;
-      transition: 1s linear all;
-      fill-rule: nonzero;
-      stroke: url(#gradient);
-    }
-
-    #gradient {
-      --color-stop: #64c4a0;
-      --color-bot: #15889e;
+    .countdown-text-middle {
+      font-size: 60px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+      color: #1f1f1f;
     }
   }
 }
