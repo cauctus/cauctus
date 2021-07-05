@@ -18,7 +18,7 @@
 
 <script>
 import {Component, Vue} from 'nuxt-property-decorator'
-import {generateTheme} from '~/service/theme-generator';
+import {generateTheme} from '~/service/theme-generator'
 
 @Component
 export default class ThemeGenerator extends Vue {
