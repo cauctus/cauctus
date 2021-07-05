@@ -7,16 +7,38 @@
       <div>
         <Countdown ref="countdown" />
       </div>
-      <div class="text-center">
-        <v-btn @click="countdown.start()">
-          start
-        </v-btn>
-        <v-btn @click="countdown.stop()">
-          stop
-        </v-btn>
+      <div>
+        <v-row align="center" justify="center" no-gutters>
+          <v-col cols="12" sm="4">
+            <v-btn text @click="countdown.stop()">
+              Réinitialiser
+            </v-btn>
+          </v-col>
+          <v-col cols="12" sm="2">
+            <v-btn depressed @click="countdown.start()">
+              <v-icon>mdi-play</v-icon>
+            </v-btn>
+          </v-col>
+
+          <v-col cols="12" sm="4" />
+        </v-row>
       </div>
     </div>
     <div class="panel panel-blank" />
+
+    <v-footer absolute padless>
+      <div>
+        Cauctus <a
+          :href="'https://github.com/CorentinTh/cauctus/tree/'+appVersion"
+          target="_blank"
+          rel="noopener noreferrer"
+        >{{ appVersion }}</a> - Made with ❤ by <a
+          href="//github.com/CorentinTh"
+          target="_blank"
+          rel="noopener noreferrer"
+        > Corentin Thomasset</a>
+      </div>
+    </v-footer>
   </v-row>
 </template>
 
@@ -24,12 +46,14 @@
 import {Component, Ref, Vue} from 'nuxt-property-decorator'
 import Countdown from '~/components/Countdown.vue'
 import ThemeGenerator from '~/components/ThemeGenerator.vue'
+import {version} from '~/package.json'
 
 @Component({
   components: {Countdown, ThemeGenerator}
 })
 export default class Index extends Vue {
   @Ref() readonly countdown!: Countdown;
+  appVersion = 'v' + version
 }
 </script>
 
@@ -39,25 +63,42 @@ export default class Index extends Vue {
   text-align: center;
   --border-radius: 30px;
 
-  &.panel-theme{
+  &.panel-theme {
     background: #51a2b6;
     background: linear-gradient(145deg, #73d3a7 0%, #51a2b6 100%);
     padding-bottom: var(--border-radius);
   }
 
-  &.panel-countdown{
+  &.panel-countdown {
     background-color: #fff;
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
     margin-top: calc(-1 * var(--border-radius));
     padding-top: 50px;
 
-    box-shadow: 0 -4px 25px 0 rgba(0,0,0,0.4);
+    box-shadow: 0 -4px 25px 0 rgba(0, 0, 0, 0.4);
   }
 
   &.panel-blank {
     background-color: white;
     height: 25px;
+  }
+}
+
+.theme--light.v-footer {
+  color: #adadad;
+  text-align: center;
+  background-color: transparent;
+  width: 100%;
+
+  div {
+    width: 100%;
+    margin-bottom: 10px;
+
+    a {
+      text-decoration: none;
+      color: #51a2b6;
+    }
   }
 }
 

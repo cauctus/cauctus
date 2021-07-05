@@ -46,7 +46,7 @@ import {Component, Vue} from 'nuxt-property-decorator'
 @Component
 export default class Countdown extends Vue {
   private readonly FULL_DASH_ARRAY = 45 * 2 * Math.PI;
-  duration = 5; // seconds
+  duration = 180; // seconds
   timePassed = 0
   intervalID: number | undefined = undefined
   isPaused = true
