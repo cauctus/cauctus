@@ -1,14 +1,6 @@
 name: ci
 
-on:
-  push:
-    branches:
-      - main
-      - master
-  pull_request:
-    branches:
-      - main
-      - master
+on: [push]
 
 jobs:
   ci:
@@ -42,4 +34,7 @@ jobs:
 
       - name: Run linter 👀
         run: npm run lint
+
+      - name: Build the app
+        run: npm run generate
 
