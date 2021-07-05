@@ -64,7 +64,6 @@ export default class Countdown extends Vue {
   }
 
   addTime(delta: number) {
-    this.timePassed = this.timePassed - delta < 0 ? 0 : this.timePassed - delta
     this.duration += delta
   }
 
