@@ -40,7 +40,7 @@ export default class Index extends Vue {
   --border-radius: 30px;
 
   &.panel-theme{
-    background: rgb(37,99,108);
+    background: #51a2b6;
     background: linear-gradient(145deg, #73d3a7 0%, #51a2b6 100%);
     padding-bottom: var(--border-radius);
   }

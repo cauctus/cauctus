@@ -18,13 +18,14 @@
 
 <script>
 import {Component, Vue} from 'nuxt-property-decorator'
+import {generateTheme} from '~/service/theme-generator';
 
 @Component
 export default class ThemeGenerator extends Vue {
-  theme = 'Un bateau rigolo'
+  theme = generateTheme()
 
   refreshTheme() {
-    this.theme = Math.random().toString(16)
+    this.theme = generateTheme()
   }
 }
 </script>
