@@ -30,7 +30,7 @@
     "eslint": "^7.29.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-vue": "^7.12.1",
-    "husky": "^6.0.0",
+    "husky": "^7.0.0",
     "less": "^4.0.0",
     "less-loader": "^7.1.0",
     "nuxt-property-decorator": "^2.9.1"
