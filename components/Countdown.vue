@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <div class="svg-circle-container">
       <svg class="svg-circle" viewBox="0 0 100 100">
         <defs>
@@ -10,7 +9,7 @@
           </linearGradient>
         </defs>
         <g class="svg-circle-group">
-          <circle class="svg-circle-total" cx="50" cy="50" r="45"></circle>
+          <circle class="svg-circle-total" cx="50" cy="50" r="45" />
           <path
             :stroke-dasharray="strokeDashArray"
             class="svg-circle-remaining"
@@ -20,13 +19,12 @@
             a 45,45 0 1,0 90,0
             a 45,45 0 1,0 -90,0
           "
-          ></path>
+          />
         </g>
       </svg>
     </div>
 
     {{ formattedTimer }}
-
   </div>
 </template>
 
@@ -38,20 +36,15 @@ export default class Countdown extends Vue {
   private readonly FULL_DASH_ARRAY = 45 * 2 * Math.PI;
   duration = 5; // seconds
   timePassed = 0
-  intervalID = -1
+  intervalID: number | undefined = undefined
   isPaused = true
-
-  created() {
-    this.start()
-  }
 
   get remainingSecs() {
     return this.duration - this.timePassed
   }
 
   get strokeDashArray() {
-    return `${(1 - (this.timePassed / this.duration)) * this.FULL_DASH_ARRAY} ${this.FULL_DASH_ARRAY}`;
-
+    return `${(1 - (this.timePassed / this.duration)) * this.FULL_DASH_ARRAY} ${this.FULL_DASH_ARRAY}`
   }
 
   get formattedTimer() {
@@ -59,11 +52,11 @@ export default class Countdown extends Vue {
   }
 
   startInterval() {
-    this.intervalID = setInterval(this.onSecondElapsed.bind(this), 1000)
+    this.intervalID = window.setInterval(this.onSecondElapsed.bind(this), 1000)
   }
 
   clearInterval() {
-    clearInterval(this.intervalID)
+    window.clearInterval(this.intervalID)
   }
 
   onSecondElapsed() {
