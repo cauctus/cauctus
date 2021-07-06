@@ -1,4 +1,4 @@
-# caucus
+# cautcus
 
 ## Build Setup
 
