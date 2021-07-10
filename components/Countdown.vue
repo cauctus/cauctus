@@ -1,55 +1,80 @@
 <template>
-  <div class="countdown">
-    <div class="svg-circle-container">
-      <svg class="svg-circle" viewBox="0 0 100 100">
-        <defs>
-          <linearGradient id="gradient" x2="0.35" y2="1">
-            <stop offset="0%" stop-color="var(--color-stop)" />
-            <stop offset="100%" stop-color="var(--color-bot)" />
-          </linearGradient>
-        </defs>
-        <g class="svg-circle-group">
-          <circle class="svg-circle-total" cx="50" cy="50" r="45" />
-          <path
-            :stroke-dasharray="strokeDashArray"
-            class="svg-circle-remaining"
-            d="
+  <div>
+    <div class="countdown">
+      <div class="svg-circle-container">
+        <svg class="svg-circle" viewBox="0 0 100 100" :class="{isEnded, isPaused}">
+          <defs>
+            <linearGradient id="gradient" x2="0.35" y2="1">
+              <stop offset="0%" stop-color="var(--color-stop)" />
+              <stop offset="100%" stop-color="var(--color-bot)" />
+            </linearGradient>
+          </defs>
+          <g class="svg-circle-group">
+            <circle class="svg-circle-total" cx="50" cy="50" r="45" />
+            <path
+              :stroke-dasharray="strokeDashArray"
+              class="svg-circle-remaining"
+              d="
             M 50, 50
             m -45, 0
             a 45,45 0 1,0 90,0
             a 45,45 0 1,0 -90,0
           "
-          />
-        </g>
-      </svg>
+            />
+          </g>
+        </svg>
+      </div>
+
+      <div class="countdown-text">
+        <div class="countdown-text-upper">
+          Décompte
+        </div>
+        <div
+          v-touch:swipe.left="()=> addTime(-60)"
+          v-touch:swipe.right="()=> addTime(60)"
+          class="countdown-text-middle"
+        >
+          {{ formattedTimer }}
+        </div>
+        <div class="countdown-text-bottom">
+          Avant la fin
+        </div>
+      </div>
     </div>
 
-    <div class="countdown-text">
-      <div class="countdown-text-upper">
-        Décompte
-      </div>
-      <div class="countdown-text-middle">
-        {{ formattedTimer }}
-      </div>
-      <div class="countdown-text-bottom">
-        <v-btn text @click="addTime(60)">
-          +1 minute
+    <v-row>
+      <v-col cols="12" md="5">
+        <v-btn text @click="stop">
+          Réinitialiser
         </v-btn>
-      </div>
-    </div>
+      </v-col>
+      <v-col cols="12" md="2">
+        <v-btn depressed @click="() => isPaused ? start() : pause()">
+          <v-icon>{{ isPaused ? 'mdi-play' : 'mdi-pause' }}</v-icon>
+        </v-btn>
+      </v-col>
+      <v-col cols="12" md="5">
+        <v-btn text @click="() => addTime(60)">
+          Ajouter 1min
+        </v-btn>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
 <script lang="ts">
 import {Component, Vue} from 'nuxt-property-decorator'
 
+const mod = (n: number, m: number) => ((n % m) + m) % m
+
 @Component
 export default class Countdown extends Vue {
   private readonly FULL_DASH_ARRAY = 45 * 2 * Math.PI;
-  duration = 180; // seconds
+  duration = 3; // seconds
   timePassed = 0
   intervalID: number | undefined = undefined
   isPaused = true
+  isEnded = false
 
   get remainingSecs() {
     return this.duration - this.timePassed
@@ -60,7 +85,11 @@ export default class Countdown extends Vue {
   }
 
   get formattedTimer() {
-    return `${Math.floor(this.remainingSecs / 60).toString().padStart(2, '0')}:${(this.remainingSecs % 60).toString().padStart(2, '0')}`
+    if (!this.isEnded) {
+      return `${Math.floor(this.remainingSecs / 60).toString().padStart(2, '0')}:${(this.remainingSecs % 60).toString().padStart(2, '0')}`
+    } else {
+      return `-${Math.abs(Math.ceil(this.remainingSecs / 60)).toString().padStart(2, '0')}:${(60 - mod(this.remainingSecs, 60)).toString().padStart(2, '0')}`
+    }
   }
 
   addTime(delta: number) {
@@ -68,17 +97,21 @@ export default class Countdown extends Vue {
   }
 
   startInterval() {
-    this.intervalID = window.setInterval(this.onSecondElapsed.bind(this), 1000)
+    if (!this.intervalID) {
+      this.intervalID = window.setInterval(this.onSecondElapsed.bind(this), 1000)
+    }
   }
 
   clearInterval() {
-    window.clearInterval(this.intervalID)
+    if (this.intervalID) {
+      window.clearInterval(this.intervalID)
+      this.intervalID = undefined
+    }
   }
 
   onSecondElapsed() {
-    if (++this.timePassed >= this.duration) {
-      this.pause()
-      this.onTimerEnded()
+    if (++this.timePassed > this.duration) {
+      this.isEnded = true
     }
   }
 
@@ -142,6 +175,35 @@ export default class Countdown extends Vue {
         --color-stop: #64c4a0;
         --color-bot: #15889e;
       }
+
+      &.isEnded {
+        .svg-circle-remaining {
+          display: none;
+        }
+
+        @keyframes flash_red {
+          from {
+            stroke: #eee;
+          }
+          to {
+            stroke: #f74e51;
+          }
+        }
+
+        .svg-circle-total {
+          //stroke: #f74e51;
+          animation: 0.5s ease-in-out 0s infinite alternate flash_red;
+        }
+
+        &.isPaused {
+          .svg-circle-total {
+            stroke: #f74e51;
+            animation: none;
+          }
+        }
+      }
+
+
     }
   }
 

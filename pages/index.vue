@@ -9,18 +9,6 @@
       </div>
       <div>
         <v-row align="center" justify="center" no-gutters>
-          <v-col cols="12" sm="4">
-            <v-btn text @click="countdown.stop()">
-              Réinitialiser
-            </v-btn>
-          </v-col>
-          <v-col cols="12" sm="2">
-            <v-btn depressed @click="countdown.start()">
-              <v-icon>mdi-play</v-icon>
-            </v-btn>
-          </v-col>
-
-          <v-col cols="12" sm="4" />
         </v-row>
       </div>
     </div>
