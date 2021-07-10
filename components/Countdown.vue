@@ -203,7 +203,6 @@ export default class Countdown extends Vue {
         }
       }
 
-
     }
   }
 

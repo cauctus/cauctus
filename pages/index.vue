@@ -8,8 +8,7 @@
         <Countdown ref="countdown" />
       </div>
       <div>
-        <v-row align="center" justify="center" no-gutters>
-        </v-row>
+        <v-row align="center" justify="center" no-gutters />
       </div>
     </div>
     <div class="panel panel-blank" />
