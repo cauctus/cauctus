@@ -13,7 +13,7 @@
     </div>
     <div class="panel panel-blank" />
 
-    <v-footer absolute padless>
+    <v-footer absolute padless class="custom-footer">
       <div>
         Cauctus <a
           :href="'https://github.com/CorentinTh/cauctus/tree/'+appVersion"
@@ -72,7 +72,7 @@ export default class Index extends Vue {
   }
 }
 
-.theme--light.v-footer {
+.theme--light.v-footer.custom-footer {
   color: #adadad;
   text-align: center;
   background-color: transparent;
