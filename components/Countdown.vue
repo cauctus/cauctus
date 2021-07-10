@@ -70,7 +70,7 @@ const mod = (n: number, m: number) => ((n % m) + m) % m
 @Component
 export default class Countdown extends Vue {
   private readonly FULL_DASH_ARRAY = 45 * 2 * Math.PI;
-  duration = 3; // seconds
+  duration = 180; // seconds
   timePassed = 0
   intervalID: number | undefined = undefined
   isPaused = true
@@ -125,6 +125,7 @@ export default class Countdown extends Vue {
     this.clearInterval()
     this.timePassed = 0
     this.isPaused = true
+    this.isEnded = false
     this.$emit('timerStopped')
   }
 
