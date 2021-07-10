@@ -93,7 +93,7 @@ export default class Countdown extends Vue {
   }
 
   addTime(delta: number) {
-    this.duration += delta
+    this.duration = Math.max(this.duration + delta, 0)
   }
 
   startInterval() {
