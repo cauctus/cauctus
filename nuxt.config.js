@@ -26,7 +26,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/vue2-touch-events.plugin.ts'
+    '~/plugins/vue2-touch-events.plugin.ts',
+    { src: '~/plugins/pwa-update.plugin.ts', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
