@@ -21,7 +21,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@mdi/font/css/materialdesignicons.min.css'
+    '@mdi/font/css/materialdesignicons.min.css',
+    '~/assets/global.less'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

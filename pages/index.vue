@@ -45,9 +45,7 @@ export default class Index extends Vue {
 </script>
 
 <style lang="less">
-body {
-  overflow: hidden;
-}
+
 
 .panel {
   width: 100%;
