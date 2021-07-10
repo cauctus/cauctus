@@ -43,17 +43,17 @@
     </div>
 
     <v-row>
-      <v-col cols="12" md="5">
+      <v-col cols="5">
         <v-btn text @click="stop">
           Réinitialiser
         </v-btn>
       </v-col>
-      <v-col cols="12" md="2">
+      <v-col cols="2">
         <v-btn depressed @click="() => isPaused ? start() : pause()">
           <v-icon>{{ isPaused ? 'mdi-play' : 'mdi-pause' }}</v-icon>
         </v-btn>
       </v-col>
-      <v-col cols="12" md="5">
+      <v-col cols="5">
         <v-btn text @click="() => addTime(60)">
           Ajouter 1min
         </v-btn>
