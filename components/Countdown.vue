@@ -45,7 +45,6 @@
       </div>
     </div>
 
-
     <v-dialog
       v-model="dialog"
       max-width="290"
@@ -55,11 +54,10 @@
           Modifer la durée du timer
         </v-card-title>
         <v-card-text>
-          <TimeEditor v-model="duration"/>
+          <TimeEditor v-model="duration" />
         </v-card-text>
       </v-card>
     </v-dialog>
-
 
     <v-row>
       <v-col cols="5">
