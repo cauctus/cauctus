@@ -52,10 +52,12 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en'
+      name: 'Cauctus',
+      short_name: 'Cauctus',
+      lang: 'fr'
     },
     meta: {
-      theme_color: '#ffffff'
+      theme_color: '#73d3a7'
     }
   },
 
