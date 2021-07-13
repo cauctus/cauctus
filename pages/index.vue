@@ -21,7 +21,9 @@
           rel="noopener noreferrer"
         >{{ appVersion }}</a>
         <br>
-        Made with ❤ by <a
+        Fait avec <v-icon small>
+          mdi-heart
+        </v-icon> par <a
           href="//github.com/CorentinTh"
           target="_blank"
           rel="noopener noreferrer"
@@ -91,6 +93,10 @@ export default class Index extends Vue {
   text-align: center;
   background-color: transparent;
   width: 100%;
+
+  .v-icon {
+    color: #adadad;
+  }
 
   div {
     width: 100%;
