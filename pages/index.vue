@@ -43,6 +43,17 @@ import {version} from '~/package.json'
 export default class Index extends Vue {
   @Ref() readonly countdown!: Countdown;
   appVersion = 'v' + version
+
+  head() {
+    return {
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://cauctus.net'
+        }
+      ]
+    }
+  }
 }
 </script>
 
