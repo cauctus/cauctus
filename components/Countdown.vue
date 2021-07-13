@@ -35,7 +35,7 @@
           -->
         <div
           class="countdown-text-middle"
-          @click.stop="dialog = true"
+          @click.stop="dialog = isStopped"
         >
           {{ formattedTimer }}
         </div>
@@ -50,11 +50,17 @@
       max-width="290"
     >
       <v-card>
-        <v-card-title>
+        <v-card-title class="justify-center">
           Modifer la durée du timer
         </v-card-title>
         <v-card-text>
           <TimeEditor v-model="duration" />
+
+          <div class="text-center">
+            <v-btn depressed @click="dialog = false">
+              Valider
+            </v-btn>
+          </div>
         </v-card-text>
       </v-card>
     </v-dialog>
@@ -88,12 +94,13 @@ const mod = (n: number, m: number) => ((n % m) + m) % m
 @Component({components: {TimeEditor}})
 export default class Countdown extends Vue {
   private readonly FULL_DASH_ARRAY = 45 * 2 * Math.PI;
-  duration = 726; // seconds
+  duration = 180; // seconds
   timePassed = 0
   intervalID: number | undefined = undefined
   isPaused = true
   isEnded = false
-  dialog = true
+  dialog = false
+  isStopped = true
 
   get remainingSecs() {
     return this.duration - this.timePassed
@@ -137,6 +144,7 @@ export default class Countdown extends Vue {
   start() {
     this.startInterval()
     this.isPaused = false
+    this.isStopped = false
     this.$emit('timerStarted')
   }
 
@@ -144,6 +152,7 @@ export default class Countdown extends Vue {
     this.clearInterval()
     this.timePassed = 0
     this.isPaused = true
+    this.isStopped = true
     this.isEnded = false
     this.$emit('timerStopped')
   }
