@@ -1,6 +1,6 @@
 {
   "name": "cauctus",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.0",
   "description": "Improvisational theater themes generator with an integrated countdown timer mobile web app.",
   "private": true,
   "scripts": {
