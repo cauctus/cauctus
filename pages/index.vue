@@ -19,7 +19,9 @@
           :href="'https://github.com/CorentinTh/cauctus/tree/'+appVersion"
           target="_blank"
           rel="noopener noreferrer"
-        >{{ appVersion }}</a> - Made with ❤ by <a
+        >{{ appVersion }}</a>
+        <br>
+        Made with ❤ by <a
           href="//github.com/CorentinTh"
           target="_blank"
           rel="noopener noreferrer"
