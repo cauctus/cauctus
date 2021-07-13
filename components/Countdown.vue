@@ -29,10 +29,13 @@
         <div class="countdown-text-upper">
           Décompte
         </div>
-        <div
+        <!--
           v-touch:swipe.left="()=> addTime(-60)"
           v-touch:swipe.right="()=> addTime(60)"
+          -->
+        <div
           class="countdown-text-middle"
+          @click.stop="dialog = true"
         >
           {{ formattedTimer }}
         </div>
@@ -41,6 +44,22 @@
         </div>
       </div>
     </div>
+
+
+    <v-dialog
+      v-model="dialog"
+      max-width="290"
+    >
+      <v-card>
+        <v-card-title>
+          Modifer la durée du timer
+        </v-card-title>
+        <v-card-text>
+          <TimeEditor v-model="duration"/>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
+
 
     <v-row>
       <v-col cols="5">
@@ -64,17 +83,19 @@
 
 <script lang="ts">
 import {Component, Vue} from 'nuxt-property-decorator'
+import TimeEditor from './TimeEditor.vue'
 
 const mod = (n: number, m: number) => ((n % m) + m) % m
 
-@Component
+@Component({components: {TimeEditor}})
 export default class Countdown extends Vue {
   private readonly FULL_DASH_ARRAY = 45 * 2 * Math.PI;
-  duration = 180; // seconds
+  duration = 726; // seconds
   timePassed = 0
   intervalID: number | undefined = undefined
   isPaused = true
   isEnded = false
+  dialog = true
 
   get remainingSecs() {
     return this.duration - this.timePassed

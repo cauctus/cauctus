@@ -27,7 +27,6 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/vue2-touch-events.plugin.ts',
     { src: '~/plugins/pwa-update.plugin.ts', mode: 'client' }
   ],
 
@@ -70,7 +69,7 @@ export default {
       dark: false,
       themes: {
         dark: {
-          primary: colors.blue.darken2,
+          primary: '#73d3a7',
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,
