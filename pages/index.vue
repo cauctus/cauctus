@@ -46,7 +46,6 @@ export default class Index extends Vue {
 
 <style lang="less">
 
-
 .panel {
   width: 100%;
   text-align: center;
