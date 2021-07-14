@@ -1,8 +1,18 @@
 {
   "name": "cauctus",
   "version": "1.0.0-beta.1",
-  "description": "Improvisational theater themes generator with an integrated countdown timer mobile web app.",
-  "private": true,
+  "description": "Mobile web application with useful tools for improvisational theatre.",
+  "private": false,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CorentinTh/cauctus"
+  },
+  "funding": "https://github.com/sponsors/CorentinTh",
+  "author": "Corentin Th <corentin.thomasset74@gmail.com> (https://github.com/CorentinTh)",
+  "homepage": "https://cauctus.net",
+  "bugs": "https://github.com/CorentinTh/cauctus/issues",
+  "keywords": ["impro", "improvisation", "improvisational-theater", "theater", "webapp"],
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
