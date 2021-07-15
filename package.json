@@ -12,7 +12,13 @@
   "author": "Corentin Th <corentin.thomasset74@gmail.com> (https://github.com/CorentinTh)",
   "homepage": "https://cauctus.net",
   "bugs": "https://github.com/CorentinTh/cauctus/issues",
-  "keywords": ["impro", "improvisation", "improvisational-theater", "theater", "webapp"],
+  "keywords": [
+    "impro",
+    "improvisation",
+    "improvisational-theater",
+    "theater",
+    "webapp"
+  ],
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -29,7 +35,8 @@
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7",
     "vue2-touch-events": "^3.2.2",
-    "vuetify": "^2.5.5"
+    "vuetify": "^2.5.5",
+    "vuetify-toast-snackbar": "^0.6.1"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
@@ -37,6 +44,7 @@
     "@commitlint/config-conventional": "^12.1.4",
     "@nuxt/types": "^2.15.7",
     "@nuxt/typescript-build": "^2.1.0",
+    "@nuxtjs/device": "^2.1.0",
     "@nuxtjs/eslint-config-typescript": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/vuetify": "^1.12.1",

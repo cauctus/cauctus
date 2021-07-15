@@ -27,7 +27,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/pwa-update.plugin.ts', mode: 'client' }
+    { src: '~/plugins/pwa-update.plugin.ts', mode: 'client' },
+    '~/plugins/vuetify-toast-snackbar.plugin.ts'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -38,7 +39,9 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    // https://github.com/nuxt-community/device-module
+    '@nuxtjs/device'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -66,6 +69,13 @@ export default {
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
+    treeShake: {
+      components: [
+        'VSnackbar',
+        'VBtn',
+        'VIcon'
+      ]
+    },
     defaultAssets: {
       icons: false
     },

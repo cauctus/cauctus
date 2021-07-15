@@ -46,6 +46,12 @@ export default class Index extends Vue {
   @Ref() readonly countdown!: Countdown;
   appVersion = 'v' + version
 
+  created(){
+    if (process.client && this.$device.isDesktop){
+      this.$toast.success('This application is optimised for mobile use only yet. </br> A desktop friendly version may be comming in the futur')
+    }
+  }
+
   head() {
     return {
       link: [
