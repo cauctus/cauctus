@@ -26,7 +26,8 @@
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "prepare": "husky install",
-    "lint": "npm run lint:js"
+    "lint": "npm run lint:js",
+    "release": "standard-version"
   },
   "dependencies": {
     "@mdi/font": "^5.9.55",
@@ -54,6 +55,7 @@
     "husky": "^6.0.0",
     "less": "^4.0.0",
     "less-loader": "^7.1.0",
-    "nuxt-property-decorator": "^2.9.1"
+    "nuxt-property-decorator": "^2.9.1",
+    "standard-version": "^9.3.1"
   }
 }
