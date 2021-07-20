@@ -49,8 +49,15 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
-    '@nuxt/content'
+    '@nuxt/content',
+    'vue-plausible'
   ],
+
+  plausible: {
+    domain: process.env.NUXT_ENV_PLAUSIBLE_DOMAIN,
+    apiHost: process.env.NUXT_ENV_PLAUSIBLE_API_HOST,
+    trackLocalhost: false
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
