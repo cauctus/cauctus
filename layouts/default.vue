@@ -3,7 +3,7 @@
     <v-main>
       <v-navigation-drawer
         v-model="drawer"
-        absolute
+        fixed
         temporary
       >
         <div class="heading">
