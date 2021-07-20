@@ -4,6 +4,10 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  env: {
+    gitCommitSHA: process?.env?.NUXT_ENV_VERCEL_GIT_COMMIT_SHA ?? null
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - Cauctus',

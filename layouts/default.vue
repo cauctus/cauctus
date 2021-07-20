@@ -94,7 +94,13 @@
               :href="'https://github.com/CorentinTh/cauctus/tree/'+appVersion"
               target="_blank"
               rel="noopener noreferrer"
-            >{{ appVersion }}</a>
+            >{{ appVersion }}</a><template v-if="commitSHA">
+              - <a
+                :href="'https://github.com/CorentinTh/cauctus/commit/'+commitSHA"
+                target="_blank"
+                rel="noopener noreferrer"
+              >{{ commitSHA.substr(0, 7) }}</a>
+            </template>
             <br>
             Fait avec <v-icon x-small>
               {{ icons.mdiHeart }}
@@ -122,6 +128,7 @@ import {version} from '~/package.json'
 export default class Default extends Vue {
   drawer = false
   appVersion = 'v' + version
+  commitSHA = process.env.gitCommitSHA
   icons = {
     mdiHeart
   }
