@@ -40,7 +40,8 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     // https://github.com/nuxt-community/device-module
-    '@nuxtjs/device'
+    '@nuxtjs/device',
+    '@nuxtjs/google-fonts'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -79,7 +80,8 @@ export default {
       ]
     },
     defaultAssets: {
-      icons: false
+      icons: false,
+      font: false
     },
     customVariables: ['~/assets/variables.scss'],
     theme: {
@@ -88,6 +90,18 @@ export default {
         light: {
           primary: '#73d3a7'
         }
+      }
+    }
+  },
+
+  googleFonts: {
+    display: 'swap',
+    prefetch: true,
+    preconnect: true,
+    preload: true,
+    families: {
+      Roboto: {
+        wght: [300, 400, 500, 700, 900]
       }
     }
   },
