@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-beta.3](https://github.com/CorentinTh/cauctus/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2021-07-20)
+
+
+### Features
+
+* **settings:** added commit short hash along version number ([74d81b6](https://github.com/CorentinTh/cauctus/commit/74d81b60107bbfbbae887e2f3838fd7736b6dd3a))
+
+
+### Bug Fixes
+
+* **deps:** fixed dependency issues ([3893ceb](https://github.com/CorentinTh/cauctus/commit/3893ceb0b30f1d593bbee81e9af3991ab77e6831))
+* **sidenav:** fixed sidenav height issue ([c0c4cab](https://github.com/CorentinTh/cauctus/commit/c0c4cab853253130e1da2fb8464682ddb8e700c8))
+
 ## [1.0.0-beta.2](https://github.com/CorentinTh/cauctus/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2021-07-20)
 
 
