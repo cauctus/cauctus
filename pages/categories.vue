@@ -78,8 +78,6 @@ export default class Categories extends Vue {
   }
 
   .list-content {
-    border-top: 1px solid #d2d2d2;
-    padding-top: 16px;
     color: #3c3c3c;
     text-align: justify;
   }
