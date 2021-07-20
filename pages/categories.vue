@@ -1,10 +1,11 @@
 <template>
   <div class="page-wrapper">
     <div class="page-header">
-
-     <div>
-       <h1 class="text-center">Les catégories</h1>
-     </div>
+      <div>
+        <h1 class="text-center">
+          Les catégories
+        </h1>
+      </div>
 
       <v-text-field
         v-model="query"

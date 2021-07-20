@@ -1,17 +1,17 @@
 <template>
-<div>
-  <BaseGenerator
-    v-model="theme"
-    title="Thème"
-    @refresh="refreshTheme"
-  />
+  <div>
+    <BaseGenerator
+      v-model="theme"
+      title="Thème"
+      @refresh="refreshTheme"
+    />
 
-  <BaseGenerator
-    v-model="place"
-    title="Lieu :"
-    @refresh="refreshPlace"
-  />
-</div>
+    <BaseGenerator
+      v-model="place"
+      title="Lieu :"
+      @refresh="refreshPlace"
+    />
+  </div>
 </template>
 
 <script lang="ts">

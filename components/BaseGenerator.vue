@@ -34,11 +34,12 @@ export default class BaseGenerator extends Vue {
 .generator {
   text-align: left;
   color: #ffffff;
+  margin: 10px 0;
 
   .generator-title {
     font-size: 15px;
     font-weight: 400;
-    margin-bottom: -10px;
+    margin-bottom: -8px;
   }
 
   .generator-result-wrapper {

@@ -1,5 +1,19 @@
 <template>
   <div>
+    <v-row class="btn-time" no-gutters>
+      <v-col col="6">
+        <v-btn text @click="()=>addTime(30)">
+          +30s
+        </v-btn>
+      </v-col>
+      <v-spacer />
+      <v-col col="6">
+        <v-btn text @click="()=>addTime(-30)">
+          -30s
+        </v-btn>
+      </v-col>
+    </v-row>
+
     <div class="countdown">
       <div class="svg-circle-container">
         <svg class="svg-circle" viewBox="0 0 100 100" :class="{isEnded, isPaused}">
@@ -27,12 +41,10 @@
 
       <div class="countdown-text">
         <div class="countdown-text-upper">
-          Décompte
+          <v-btn text @click="stop">
+            Réinitialiser
+          </v-btn>
         </div>
-        <!--
-          v-touch:swipe.left="()=> addTime(-60)"
-          v-touch:swipe.right="()=> addTime(60)"
-          -->
         <div
           class="countdown-text-middle"
           @click.stop="dialog = isStopped"
@@ -40,7 +52,9 @@
           {{ formattedTimer }}
         </div>
         <div class="countdown-text-bottom">
-          Avant la fin
+          <v-btn depressed @click="() => isPaused ? start() : pause()">
+            <v-icon>{{ isPaused ? icons.mdiPlay : icons.mdiPause }}</v-icon>
+          </v-btn>
         </div>
       </div>
     </div>
@@ -64,24 +78,6 @@
         </v-card-text>
       </v-card>
     </v-dialog>
-
-    <v-row>
-      <v-col cols="5">
-        <v-btn text @click="stop">
-          Réinitialiser
-        </v-btn>
-      </v-col>
-      <v-col cols="2">
-        <v-btn depressed @click="() => isPaused ? start() : pause()">
-          <v-icon>{{ isPaused ? icons.mdiPlay : icons.mdiPlay }}</v-icon>
-        </v-btn>
-      </v-col>
-      <v-col cols="5">
-        <v-btn text @click="() => addTime(60)">
-          Ajouter 1min
-        </v-btn>
-      </v-col>
-    </v-row>
   </div>
 </template>
 
@@ -177,6 +173,13 @@ export default class Countdown extends Vue {
 </script>
 
 <style scoped lang="less">
+.btn-time{
+  button {
+    text-transform: none;
+    color: #777 !important;
+  }
+}
+
 .countdown {
   position: relative;
   display: inline-block;

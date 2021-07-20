@@ -55,7 +55,7 @@ export default class Index extends Vue {
   &.panel-theme {
     background: #51a2b6;
     background: linear-gradient(145deg, #73d3a7 0%, #51a2b6 100%);
-    padding: 20px 30px calc(20px + var(--border-radius));
+    padding: 20px 30px calc(20px + var(--border-radius)) 30px;
   }
 
   &.panel-countdown {
@@ -63,7 +63,7 @@ export default class Index extends Vue {
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
     margin-top: calc(-1 * var(--border-radius));
-    padding-top: 50px;
+    padding-top: 26px;
 
     box-shadow: 0 -4px 25px 0 rgba(0, 0, 0, 0.4);
   }
