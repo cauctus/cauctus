@@ -137,13 +137,14 @@ export default class Countdown extends Vue {
   }
 
   onSecondElapsed() {
-    if (++this.timePassed > this.duration) {
+    if (++this.timePassed > this.duration && !this.isEnded) {
       this.onTimerEnded()
     }
   }
 
   start() {
     this.startInterval()
+    this.stopVibration()
     this.isPaused = false
     this.isStopped = false
     this.$emit('timerStarted')
@@ -151,6 +152,7 @@ export default class Countdown extends Vue {
 
   stop() {
     this.clearInterval()
+    this.stopVibration()
     this.timePassed = 0
     this.isPaused = true
     this.isStopped = true
@@ -159,6 +161,7 @@ export default class Countdown extends Vue {
   }
 
   pause() {
+    this.stopVibration()
     this.clearInterval()
     this.isPaused = true
     this.$emit('timerPaused')
@@ -166,8 +169,12 @@ export default class Countdown extends Vue {
 
   onTimerEnded() {
     this.isEnded = true
-    window?.navigator?.vibrate?.([1000, 100, 1000, 100, 1000])
+    window?.navigator?.vibrate?.([200, 50, 200, 50, 200, 50, 200, 50, 200, 50, 200])
     this.$emit('timerEnded')
+  }
+
+  stopVibration() {
+    window?.navigator?.vibrate?.(0)
   }
 }
 </script>
