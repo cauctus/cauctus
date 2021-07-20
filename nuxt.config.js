@@ -9,13 +9,13 @@ export default {
     titleTemplate: '%s - Cauctus',
     title: 'Cauctus',
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: description ?? ''},
-      { name: 'format-detection', content: 'telephone=no' }
+      {charset: 'utf-8'},
+      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      {hid: 'description', name: 'description', content: description ?? ''},
+      {name: 'format-detection', content: 'telephone=no'}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
     ]
   },
 
@@ -26,7 +26,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/pwa-update.plugin.ts', mode: 'client' },
+    {src: '~/plugins/pwa-update.plugin.ts', mode: 'client'},
     '~/plugins/vuetify-toast-snackbar.plugin.ts'
   ],
 
@@ -93,6 +93,7 @@ export default {
     customVariables: ['~/assets/variables.scss'],
     theme: {
       dark: false,
+      options: {customProperties: true},
       themes: {
         light: {
           primary: '#73d3a7'
@@ -114,6 +115,5 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  }
+  build: {}
 }
