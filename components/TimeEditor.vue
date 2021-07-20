@@ -3,7 +3,7 @@
     <div class="digit-editor">
       <div class="arrow arrow-up">
         <v-btn x-large color="primary" icon @click="addTime(600)">
-          <v-icon>mdi-menu-up</v-icon>
+          <v-icon>{{ icons.mdiMenuUp }}</v-icon>
         </v-btn>
       </div>
       <div class="digit">
@@ -11,7 +11,7 @@
       </div>
       <div class="arrow arrow-down">
         <v-btn x-large color="primary" icon @click="addTime(-600)">
-          <v-icon>mdi-menu-down</v-icon>
+          <v-icon>{{ icons.mdiMenuDown }}</v-icon>
         </v-btn>
       </div>
     </div>
@@ -19,7 +19,7 @@
     <div class="digit-editor">
       <div class="arrow arrow-up">
         <v-btn x-large color="primary" icon @click="addTime(60)">
-          <v-icon>mdi-menu-up</v-icon>
+          <v-icon>{{ icons.mdiMenuUp }}</v-icon>
         </v-btn>
       </div>
       <div class="digit">
@@ -27,7 +27,7 @@
       </div>
       <div class="arrow arrow-down">
         <v-btn x-large color="primary" icon @click="addTime(-60)">
-          <v-icon>mdi-menu-down</v-icon>
+          <v-icon>{{ icons.mdiMenuDown }}</v-icon>
         </v-btn>
       </div>
     </div>
@@ -37,7 +37,7 @@
     <div class="digit-editor">
       <div class="arrow arrow-up">
         <v-btn x-large color="primary" icon @click="addTime(10)">
-          <v-icon>mdi-menu-up</v-icon>
+          <v-icon>{{ icons.mdiMenuUp }}</v-icon>
         </v-btn>
       </div>
       <div class="digit">
@@ -45,7 +45,7 @@
       </div>
       <div class="arrow arrow-down">
         <v-btn x-large color="primary" icon @click="addTime(-10)">
-          <v-icon>mdi-menu-down</v-icon>
+          <v-icon>{{ icons.mdiMenuDown }}</v-icon>
         </v-btn>
       </div>
     </div>
@@ -53,7 +53,7 @@
     <div class="digit-editor">
       <div class="arrow arrow-up">
         <v-btn x-large color="primary" icon @click="addTime(1)">
-          <v-icon>mdi-menu-up</v-icon>
+          <v-icon>{{ icons.mdiMenuUp }}</v-icon>
         </v-btn>
       </div>
       <div class="digit">
@@ -61,7 +61,7 @@
       </div>
       <div class="arrow arrow-down">
         <v-btn x-large color="primary" icon @click="addTime(-1)">
-          <v-icon>mdi-menu-down</v-icon>
+          <v-icon>{{ icons.mdiMenuDown }}</v-icon>
         </v-btn>
       </div>
     </div>
@@ -70,10 +70,15 @@
 
 <script lang='ts'>
 import {Component, ModelSync, Vue} from 'nuxt-property-decorator'
+import {mdiMenuDown, mdiMenuUp} from '@mdi/js'
 
 @Component
 export default class TimeEditor extends Vue {
   @ModelSync('time', 'change') duration!: number
+  icons = {
+    mdiMenuDown,
+    mdiMenuUp
+  }
 
   addTime(delta: number) {
     this.duration = Math.max(this.duration + delta, 0)

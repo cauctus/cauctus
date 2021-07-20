@@ -73,7 +73,7 @@
       </v-col>
       <v-col cols="2">
         <v-btn depressed @click="() => isPaused ? start() : pause()">
-          <v-icon>{{ isPaused ? 'mdi-play' : 'mdi-pause' }}</v-icon>
+          <v-icon>{{ isPaused ? icons.mdiPlay : icons.mdiPlay }}</v-icon>
         </v-btn>
       </v-col>
       <v-col cols="5">
@@ -87,6 +87,7 @@
 
 <script lang="ts">
 import {Component, Vue} from 'nuxt-property-decorator'
+import {mdiPlay, mdiPause} from '@mdi/js'
 import TimeEditor from './TimeEditor.vue'
 
 const mod = (n: number, m: number) => ((n % m) + m) % m
@@ -101,6 +102,10 @@ export default class Countdown extends Vue {
   isEnded = false
   dialog = false
   isStopped = true
+  icons = {
+    mdiPlay,
+    mdiPause
+  }
 
   get remainingSecs() {
     return this.duration - this.timePassed

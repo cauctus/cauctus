@@ -22,7 +22,7 @@
         >{{ appVersion }}</a>
         <br>
         Fait avec <v-icon small>
-          mdi-heart
+          {{ icons.mdiHeart }}
         </v-icon> par <a
           href="//github.com/CorentinTh"
           target="_blank"
@@ -35,6 +35,7 @@
 
 <script lang="ts">
 import {Component, Ref, Vue} from 'nuxt-property-decorator'
+import { mdiHeart } from '@mdi/js'
 import Countdown from '~/components/Countdown.vue'
 import ThemeGenerator from '~/components/ThemeGenerator.vue'
 import {version} from '~/package.json'
@@ -45,6 +46,9 @@ import {version} from '~/package.json'
 export default class Index extends Vue {
   @Ref() readonly countdown!: Countdown;
   appVersion = 'v' + version
+  icons = {
+    mdiHeart
+  }
 
   created() {
     if (process.client && this.$device.isDesktop) {

@@ -21,7 +21,6 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@mdi/font/css/materialdesignicons.min.css',
     '~/assets/global.less'
   ],
 
@@ -69,6 +68,9 @@ export default {
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
+    icons: {
+      iconfont: 'mdiSvg'
+    },
     treeShake: {
       components: [
         'VSnackbar',

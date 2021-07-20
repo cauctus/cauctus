@@ -9,7 +9,7 @@
       </div>
       <div class="button-wrapper">
         <v-btn icon @click="refreshTheme">
-          <v-icon>mdi-refresh</v-icon>
+          <v-icon>{{ icons.mdiRefresh }}</v-icon>
         </v-btn>
       </div>
     </div>
@@ -18,11 +18,15 @@
 
 <script>
 import {Component, Vue} from 'nuxt-property-decorator'
+import {mdiRefresh} from '@mdi/js'
 import {generateTheme} from '~/service/theme-generator'
 
 @Component
 export default class ThemeGenerator extends Vue {
   theme = generateTheme()
+  icons = {
+    mdiRefresh
+  }
 
   refreshTheme() {
     this.theme = generateTheme()
