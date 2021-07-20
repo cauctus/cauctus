@@ -32,16 +32,20 @@
 
 <script lang="ts">
 import {Component, Vue} from 'nuxt-property-decorator'
+import {Context} from '@nuxt/types'
 
 const normalize = (s: string) => s.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036F]/g, '')
+
+type CategoryList = { title: string; description: string; }[]
+type CategoryDoc = { categories: CategoryList }
 
 @Component
 export default class Categories extends Vue {
   query = ''
-  categories!: { title: string; description: string; }[];
+  categories!: CategoryList;
 
-  async asyncData({$content}) {
-    const {categories}: { categories: { title: string, description: string }[] } = await $content('categories').sortBy('title').fetch()
+  async asyncData({$content}: Context) {
+    const {categories} = (await $content('categories').sortBy('title').fetch()) as unknown as CategoryDoc
 
     return {categories}
   }

@@ -27,7 +27,8 @@
     "types": [
       "@nuxt/types",
       "@nuxt/content",
-      "@types/node"
+      "@types/node",
+      "@nuxtjs/device"
     ]
   },
   "exclude": [
