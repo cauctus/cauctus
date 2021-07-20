@@ -71,9 +71,6 @@ export default {
     }
   },
 
-  // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {},
-
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     icons: {
@@ -115,5 +112,13 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {
+    extend(config) {
+      config.module.rules.push({
+        test: /\.ya?ml$/,
+        type: 'json', // Required by Webpack v4
+        use: 'yaml-loader'
+      })
+    }
+  }
 }
