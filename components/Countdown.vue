@@ -142,7 +142,7 @@ export default class Countdown extends Vue {
 
   onSecondElapsed() {
     if (++this.timePassed > this.duration) {
-      this.isEnded = true
+      this.onTimerEnded()
     }
   }
 
@@ -169,6 +169,8 @@ export default class Countdown extends Vue {
   }
 
   onTimerEnded() {
+    this.isEnded = true
+    window?.navigator?.vibrate?.([1000, 100, 1000, 100, 1000])
     this.$emit('timerEnded')
   }
 }
