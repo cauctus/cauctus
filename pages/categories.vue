@@ -84,7 +84,6 @@ h1{
     top: 0;
     width: 100%;
     z-index: 6;
-
     box-shadow: 0 -4px 25px 0 rgba(0, 0, 0, 0.4);
   }
 

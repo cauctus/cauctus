@@ -52,7 +52,8 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    'vue-plausible'
+    'vue-plausible',
+    '@nuxtjs/markdownit'
   ],
 
   plausible: {
@@ -95,7 +96,8 @@ export default {
       options: {customProperties: true},
       themes: {
         light: {
-          primary: '#73d3a7'
+          primary: '#73d3a7',
+          anchor: '#5bb0b1'
         }
       }
     }
