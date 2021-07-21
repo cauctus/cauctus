@@ -1,3 +1,6 @@
+# http://impronivers.be/personnages/
+# copy([...new Set([...document.querySelectorAll('.listing-item')].map(e => e.innerText).map(s => s.charAt(0).toUpperCase() + s.slice(1)).sort())].map(e => `- ${e.replace(/"/, '\\"')}`).join('\n'))
+
 - Abatteur
 - Acrobate
 - Adepte d’une secte
