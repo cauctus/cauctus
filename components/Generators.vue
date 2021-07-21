@@ -11,6 +11,12 @@
       title="Lieu :"
       @refresh="refreshPlace"
     />
+
+    <BaseGenerator
+      v-model="character"
+      title="Personnage :"
+      @refresh="refreshCharacters"
+    />
   </div>
 </template>
 
@@ -21,11 +27,13 @@ import BaseGenerator from '~/components/BaseGenerator.vue'
 import {randFromArray} from '~/helpers/utils'
 
 import places from '~/data/places.yaml'
+import characters from '~/data/characters.yaml'
 
 @Component({components: {BaseGenerator}})
 export default class Generators extends Vue {
   theme = generateTheme()
   place: string = ''
+  character: string = ''
 
   refreshTheme() {
     this.theme = generateTheme()
@@ -35,8 +43,13 @@ export default class Generators extends Vue {
     this.place = randFromArray(places as string[])
   }
 
-  mounted() {
+  refreshCharacters() {
+    this.character = randFromArray(characters as string[])
+  }
+
+  created() {
     this.refreshPlace()
+    this.refreshCharacters()
   }
 }
 </script>
