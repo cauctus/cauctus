@@ -19,6 +19,7 @@
 import {Component, Ref, Vue} from 'nuxt-property-decorator'
 import Countdown from '~/components/Countdown.vue'
 import Generators from '~/components/Generators.vue'
+import {description} from '~/package.json'
 
 @Component({
   components: {Countdown, Generators}
@@ -34,6 +35,8 @@ export default class Index extends Vue {
 
   head() {
     return {
+      titleTemplate: '%s',
+      title: `Cauctus - ${description}`,
       link: [
         {
           rel: 'canonical',

@@ -53,7 +53,8 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     'vue-plausible',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    '@nuxtjs/sitemap' // Must stay last
   ],
 
   plausible: {
@@ -117,6 +118,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extractCSS: true,
     extend(config) {
       config.module.rules.push({
         test: /\.ya?ml$/,
@@ -124,5 +126,10 @@ export default {
         use: 'yaml-loader'
       })
     }
+  },
+
+  sitemap: {
+    hostname: 'https://cauctus.net',
+    gzip: true
   }
 }

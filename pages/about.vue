@@ -76,6 +76,10 @@ export default class About extends Vue {
       icon: mdiGift
     }
   ]
+
+  head() {
+    return {title: 'A propos'}
+  }
 }
 </script>
 

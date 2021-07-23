@@ -49,6 +49,10 @@ export default class Categories extends Vue {
     mdiMagnify
   }
 
+  head() {
+    return {title: 'Liste des catégories'}
+  }
+
   get filteredCategories() {
     const queryClean = normalize(this.query)
 

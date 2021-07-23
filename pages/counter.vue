@@ -50,6 +50,10 @@ export default class Counter extends Vue {
     mdiMenu
   }
 
+  head() {
+    return {title: 'Compteur'}
+  }
+
   created() {
     if (process.browser) {
       this.count = localStorage.count ?? 0
