@@ -139,22 +139,28 @@
         </div>
 
         <v-list>
-          <v-list-item
-            v-for="(item, i) in navigation"
-            :key="i"
-            :to="item.to"
-            link
-            router
-            exact
-          >
-            <v-list-item-action>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-item-action>
+          <div v-for="(section, i) in navigation" :key="i">
+            <v-subheader v-if="section.title">
+              {{ section.title }}
+            </v-subheader>
 
-            <v-list-item-content>
-              <v-list-item-title>{{ item.text }}</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
+            <v-list-item
+              v-for="(item, j) in section.items"
+              :key="j"
+              :to="item.to"
+              link
+              router
+              exact
+            >
+              <v-list-item-action>
+                <v-icon>{{ item.icon }}</v-icon>
+              </v-list-item-action>
+
+              <v-list-item-content>
+                <v-list-item-title>{{ item.text }}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </div>
         </v-list>
 
         <v-footer absolute padless class="custom-footer">
@@ -193,12 +199,11 @@
 
 <script lang="ts">
 import {Component, Vue} from 'nuxt-property-decorator'
-import {mdiHeart, mdiHome, mdiInformation, mdiShape} from '@mdi/js'
+import {mdiCounter, mdiHeart, mdiHome, mdiInformation, mdiShape} from '@mdi/js'
 import {version} from '~/package.json'
 
 @Component
 export default class Default extends Vue {
-  drawer = false
   appVersion = 'v' + version
   commitSHA = process.env.gitCommitSHA
   icons = {
@@ -207,21 +212,44 @@ export default class Default extends Vue {
 
   navigation = [
     {
-      text: 'Home',
-      icon: mdiHome,
-      to: '/'
+      title: false,
+      items: [
+        {
+          text: 'Home',
+          icon: mdiHome,
+          to: '/'
+        },
+        {
+          text: 'Les catoch\'',
+          icon: mdiShape,
+          to: '/categories'
+        },
+        {
+          text: 'A propos',
+          icon: mdiInformation,
+          to: '/about'
+        }
+      ]
     },
     {
-      text: 'Les catoch\'',
-      icon: mdiShape,
-      to: '/categories'
-    },
-    {
-      text: 'A propos',
-      icon: mdiInformation,
-      to: '/about'
+      title: 'Divers',
+      items: [
+        {
+          text: 'Counter',
+          icon: mdiCounter,
+          to: '/counter'
+        }
+      ]
     }
   ]
+
+  get drawer() {
+    return this.$store.state.sidenav.open
+  }
+
+  set drawer(value: boolean) {
+    this.$store.commit('sidenav/set', value)
+  }
 }
 </script>
 

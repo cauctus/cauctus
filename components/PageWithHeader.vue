@@ -22,6 +22,9 @@ export default class PageWithHeader extends Vue {
 .pwh {
   background-color: rgb(245 245 247);
   margin: -12px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   .pwh-header {
     color: #ffffff;
@@ -32,7 +35,11 @@ export default class PageWithHeader extends Vue {
   }
 
   .pwh-content {
+    flex-grow: 1;
     padding: 26px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
   }
 }
 </style>
