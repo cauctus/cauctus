@@ -223,11 +223,6 @@ export default class Default extends Vue {
           text: 'Les catoch\'',
           icon: mdiShape,
           to: '/categories'
-        },
-        {
-          text: 'A propos',
-          icon: mdiInformation,
-          to: '/about'
         }
       ]
     },
@@ -235,9 +230,14 @@ export default class Default extends Vue {
       title: 'Divers',
       items: [
         {
-          text: 'Counter',
+          text: 'Compteur',
           icon: mdiCounter,
           to: '/counter'
+        },
+        {
+          text: 'A propos',
+          icon: mdiInformation,
+          to: '/about'
         }
       ]
     }

@@ -1,19 +1,29 @@
 <template>
   <PageWithHeader>
     <template slot="header">
-      <h1>A propos</h1>
+      <v-row no-gutters justify="center" align="center">
+        <v-btn icon dark large @click="$store.commit('sidenav/open')">
+          <v-icon large>
+            {{ icons.mdiMenu }}
+          </v-icon>
+        </v-btn>
+        <v-spacer />
+        <h1>à propos</h1>
+      </v-row>
     </template>
 
     <template slot="content">
       <v-card>
         <v-card-text>
           <p class="text-justify">
+            &nbsp;&nbsp;&nbsp;&nbsp;
             <nuxt-link to="/">
               Cauctus
             </nuxt-link> est une application publique open source (sous license MIT) développée par
-            <a href="https://github.com/CorentinTh" target="_blank" rel="noopener noreferrer">Corentin Thomasset</a> visant a mettre a disposition des ressources pour l'organisation d'ateliers ou de spectacles de théâtre d'improvisation
+            <a href="https://github.com/CorentinTh" target="_blank" rel="noopener noreferrer">Corentin Thomasset</a> visant a mettre a disposition des ressources pour l'organisation d'ateliers ou de spectacles de théâtre d'improvisation.
           </p>
           <p class="text-justify">
+            &nbsp;&nbsp;&nbsp;&nbsp;
             Si vous avez trouvé un bug, quelque chose de cassé ou qui ne fonctionne pas comme prévu, ou bien que vous souhaiteriez voir une nouvelle fonctionnalité, veuillez remplir un rapport de bug ou une demande de feature
             <a target="_blank" rel="noopener noreferrer" href="https://github.com/CorentinTh/cauctus/issues/new/choose">ici</a> ou me contacter directement par mail <SecureEmail email="cauctus@cthmsst.me" />.
           </p>
@@ -49,7 +59,7 @@
 
 <script lang="ts">
 import {Component, Vue} from 'nuxt-property-decorator'
-import {mdiGithub, mdiTwitter, mdiGift} from '@mdi/js'
+import {mdiGithub, mdiTwitter, mdiGift, mdiMenu} from '@mdi/js'
 import changelog from '~/CHANGELOG.md'
 import PageWithHeader from '~/components/PageWithHeader.vue'
 import SecureEmail from '~/components/SecureEmail.vue'
@@ -61,6 +71,10 @@ export default class About extends Vue {
     .replace(/<a/g, '<a target="_blank" rel="noopener noreferrer"') // add target blank to <a> link
     .replace(/h3>/g, 'h4>') // Replace h3 with h4
     .replace(/h2>/g, 'h3>') // Replace h2 with h3
+
+  icons = {
+    mdiMenu
+  }
 
   iconsLinks = [
     {
@@ -78,12 +92,16 @@ export default class About extends Vue {
   ]
 
   head() {
-    return {title: 'A propos'}
+    return {title: 'À propos'}
   }
 }
 </script>
 
 <style lang="less" scoped>
+h1{
+  font-weight: 300;
+  text-transform: uppercase;
+}
 ::v-deep {
   .icons-button .v-btn__content{
     color: var(--v-anchor-base);

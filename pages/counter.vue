@@ -82,6 +82,11 @@ export default class Counter extends Vue {
 </script>
 
 <style lang="less" scoped>
+h1{
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
 .count {
   text-align: center;
   margin: 40px 0 0;

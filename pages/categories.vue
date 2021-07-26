@@ -1,14 +1,19 @@
 <template>
   <div class="page-wrapper">
     <div class="page-header">
-      <div>
-        <h1 class="text-center">
-          Les catégories
-        </h1>
-      </div>
+      <v-row no-gutters justify="center" align="center">
+        <v-btn icon dark large @click="$store.commit('sidenav/open')">
+          <v-icon large>
+            {{ icons.mdiMenu }}
+          </v-icon>
+        </v-btn>
+        <v-spacer />
+        <h1>Les catégories</h1>
+      </v-row>
 
       <v-text-field
         v-model="query"
+        class="mt-5"
         outlined
         dense
         dark
@@ -34,7 +39,7 @@
 
 <script lang="ts">
 import {Component, Vue} from 'nuxt-property-decorator'
-import {mdiMagnify} from '@mdi/js'
+import {mdiMagnify, mdiMenu} from '@mdi/js'
 import categories from '~/data/categories.yaml'
 
 const normalize = (s: string) => s.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036F]/g, '')
@@ -46,7 +51,8 @@ export default class Categories extends Vue {
   query = ''
   categories: CategoryList = categories;
   icons = {
-    mdiMagnify
+    mdiMagnify,
+    mdiMenu
   }
 
   head() {
@@ -64,8 +70,7 @@ export default class Categories extends Vue {
 <style lang="less" scoped>
 
 h1{
-  font-weight: 400;
-  margin-bottom: 20px;
+  font-weight: 300;
 }
 
 .page-wrapper {
