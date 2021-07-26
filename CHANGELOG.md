@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-beta.4](https://github.com/CorentinTh/cauctus/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2021-07-26)
+
+
+### Features
+
+* **dictionary:** added many dictionaries ([c649d73](https://github.com/CorentinTh/cauctus/commit/c649d737b83e235bd5e83101afffae23a8cd4971))
+* **generator:** added character generator ([7272ce5](https://github.com/CorentinTh/cauctus/commit/7272ce5c23a6035b97a046ffd8eadd886d567cc8))
+* **index:** added generators + collapsable panel ([bb42d34](https://github.com/CorentinTh/cauctus/commit/bb42d34d9f7d135c1fc4631a25379f940f34cae0))
+* **page:** added /about page ([ea7eee4](https://github.com/CorentinTh/cauctus/commit/ea7eee468964fb79bddce7d30fefe6302859b9e1))
+* **page:** added /counter page ([052750d](https://github.com/CorentinTh/cauctus/commit/052750dc72786eef0a5f58cae263854905797e24))
+* **seo:** added sitemap + page title ([693de24](https://github.com/CorentinTh/cauctus/commit/693de2450d874699985d55918de4faf3ae4b61f4))
+
 ## [1.0.0-beta.3](https://github.com/CorentinTh/cauctus/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2021-07-20)
 
 
