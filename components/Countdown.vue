@@ -85,6 +85,7 @@
 import {Component, Vue} from 'nuxt-property-decorator'
 import {mdiPlay, mdiPause} from '@mdi/js'
 import TimeEditor from './TimeEditor.vue'
+import {screenWake} from '~/service/screen-wake'
 
 const mod = (n: number, m: number) => ((n % m) + m) % m
 
@@ -148,6 +149,7 @@ export default class Countdown extends Vue {
     this.isPaused = false
     this.isStopped = false
     this.$emit('timerStarted')
+    screenWake.lock()
   }
 
   stop() {
@@ -158,6 +160,7 @@ export default class Countdown extends Vue {
     this.isStopped = true
     this.isEnded = false
     this.$emit('timerStopped')
+    screenWake.release()
   }
 
   pause() {
@@ -165,6 +168,7 @@ export default class Countdown extends Vue {
     this.clearInterval()
     this.isPaused = true
     this.$emit('timerPaused')
+    screenWake.release()
   }
 
   onTimerEnded() {
