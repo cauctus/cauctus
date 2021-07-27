@@ -10,5 +10,5 @@ jobs:
   on-success:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "{{ JSON.stringify(github) }}"
+      - run: echo "${{ JSON.stringify(github) }}"
       
