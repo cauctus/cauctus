@@ -9,36 +9,6 @@ on:
 jobs:
   on-success:
     runs-on: ubuntu-latest
-    if: >
-      github.event.workflow_run.conclusion == 'success' &&
-      github.actor == 'dependabot[bot]' &&
-      github.event_name == 'pull_request' &&
-      github.event.pull_request.draft == false && (
-        github.event.action == 'opened' ||
-        github.event.action == 'reopened' ||
-        github.event.action == 'synchronize'
-      )
-      
     steps:
-      - name: "Merge pull request"
-        uses: "actions/github-script@v2"
-        with:
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
-          script: |
-            const pullRequest = context.payload.pull_request
-            const repository = context.repo
-
-            await github.pulls.createReview({
-              owner: repository.owner,
-              pull_number: pullRequest.number,
-              repo: repository.repo,
-              event: 'APPROVE',
-              body: 'Dependabot pull request auto approved by CI.'
-            })     
-
-            await github.pulls.merge({
-              merge_method: "rebase",
-              owner: repository.owner,
-              pull_number: pullRequest.number,
-              repo: repository.repo,
-            })
+      - run: echo "{{ JSON.stringify(github) }}"
+      
