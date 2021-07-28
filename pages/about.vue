@@ -25,7 +25,7 @@
           <p class="text-justify">
             &nbsp;&nbsp;&nbsp;&nbsp;
             Si vous avez trouvé un bug, quelque chose de cassé ou qui ne fonctionne pas comme prévu, ou bien que vous souhaiteriez voir une nouvelle fonctionnalité, veuillez remplir un rapport de bug ou une demande de feature
-            <a target="_blank" rel="noopener noreferrer" href="https://github.com/CorentinTh/cauctus/issues/new/choose">ici</a> ou me contacter directement par mail <SecureEmail email="cauctus@cthmsst.me" />.
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/CorentinTh/cauctus/issues/new/choose">ici</a> ou me contacter directement par mail <SecureEmail email="contact@cauctus.net" />.
           </p>
 
           <div class="text-center icons-button">
