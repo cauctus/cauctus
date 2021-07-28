@@ -149,6 +149,7 @@
               :key="j"
               :to="item.to"
               link
+              nuxt
               router
               exact
             >
@@ -199,7 +200,7 @@
 
 <script lang="ts">
 import {Component, Vue} from 'nuxt-property-decorator'
-import {mdiCounter, mdiHeart, mdiHome, mdiInformation, mdiShape} from '@mdi/js'
+import {mdiCounter, mdiHeart, mdiHome, mdiInformation, mdiShape, mdiAccountVoice} from '@mdi/js'
 import {version} from '~/package.json'
 
 @Component
@@ -223,6 +224,11 @@ export default class Default extends Vue {
           text: 'Les catoch\'',
           icon: mdiShape,
           to: '/categories'
+        },
+        {
+          text: 'Virelangues',
+          icon: mdiAccountVoice,
+          to: '/tongue-twisters'
         }
       ]
     },
