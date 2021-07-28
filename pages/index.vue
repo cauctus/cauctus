@@ -118,7 +118,8 @@ export default class Index extends Vue {
         box-shadow: 0 -4px 12px 0 rgba(0, 0, 0, 0.2);
 
         .anchor {
-          //height: 26px;
+          cursor: pointer;
+
           .v-icon {
             color: #d2d2d2;
             margin-top: 10px;
