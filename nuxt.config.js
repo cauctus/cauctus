@@ -1,4 +1,4 @@
-import {description} from './package.json'
+import {description, homepage} from './package.json'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -54,6 +54,21 @@ export default {
     '@nuxtjs/pwa',
     'vue-plausible',
     '@nuxtjs/markdownit',
+    [
+      'nuxt-social-meta',
+      {
+        url: homepage,
+        title: 'Cauctus',
+        site_name: 'Cauctus',
+        description,
+        img: 'social.png',
+        img_size: { width: 1280, height: 640 },
+        locale: 'fr_FR',
+        twitter: '@cthmsst',
+        twitter_card: 'summary_large_image',
+        theme_color: '#73d3a7'
+      }
+    ],
     '@nuxtjs/sitemap' // Must stay last
   ],
 
@@ -129,7 +144,7 @@ export default {
   },
 
   sitemap: {
-    hostname: 'https://cauctus.net',
+    hostname: homepage,
     gzip: true
   }
 }
