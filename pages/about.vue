@@ -49,6 +49,13 @@
       <br>
       <v-card>
         <v-card-text>
+          <h2>Les contributeurices</h2>
+          <GithubContributors />
+        </v-card-text>
+      </v-card>
+      <br>
+      <v-card>
+        <v-card-text>
           <h2>Changelog</h2>
           <div class="changelog" v-html="changelog" />
         </v-card-text>
@@ -63,8 +70,9 @@ import {mdiGithub, mdiTwitter, mdiGift, mdiMenu} from '@mdi/js'
 import changelog from '~/CHANGELOG.md'
 import PageWithHeader from '~/components/PageWithHeader.vue'
 import SecureEmail from '~/components/SecureEmail.vue'
+import GithubContributors from '~/components/GithubContributors.vue'
 
-@Component({components: {PageWithHeader, SecureEmail}})
+@Component({components: {PageWithHeader, SecureEmail, GithubContributors}})
 export default class About extends Vue {
   changelog = changelog
     .replace(/<h1>(.*?)<\/p>/is, '') // Remove h1 and first paragraphe
