@@ -200,7 +200,7 @@
 
 <script lang="ts">
 import {Component, Vue} from 'nuxt-property-decorator'
-import {mdiCounter, mdiHeart, mdiHome, mdiInformation, mdiShape, mdiAccountVoice} from '@mdi/js'
+import {mdiCounter, mdiHeart, mdiHome, mdiInformation, mdiShape, mdiAccountVoice, mdiPoliceBadge} from '@mdi/js'
 import {version} from '~/package.json'
 
 @Component
@@ -224,6 +224,11 @@ export default class Default extends Vue {
           text: 'Les catoch\'',
           icon: mdiShape,
           to: '/categories'
+        },
+        {
+          text: 'Les punitions',
+          icon: mdiPoliceBadge,
+          to: '/punishments'
         },
         {
           text: 'Virelangues',

@@ -1,0 +1,31 @@
+# source https://www.dramaction.qc.ca/fr/improvisation/punitions/
+# copy([...document.querySelectorAll(".page-content p")].slice(0, -1).map(e => e.innerText).filter(e => e.length > 2))
+
+- title: Accessoire illégal
+  description: Cette punition s’applique lors qu’un joueur utilise un autre élément que son chandail au cours d’une impro. Cependant, un joueur n’est plus pénalisé pour des détails mineurs du genre mains dans ses poches, jouer dans ses cheveux, regarder sa montre, etc.
+- title: Cabotinage
+  description: Toute réplique ou geste hors contexte et/ou inutilisable pour construire une impro. Il y a cabotinage quand un joueur plogue une joke facile qui n’a d’autres objectifs que de faire rire le public et de s’attirer les faveurs du votes.
+- title: Cliché
+  description: Utiliser ou pasticher une scène ou une partie de scène bien connue et qui se glisse bien dans le contexte de l’impro en jeu. Le cliché doit susciter un lien entre la réalité et l’impro en jeu pour s’appliquer. Ex, un personnage fatigué qui dirait « Je suis assez fatigué, là! » sur le même ton que le gars fatigué du duo Lévesque et Turcotte.
+- title: Confusion
+  description: Il y a confusion lorsqu’un ou plusieurs joueurs s’empêtrent dans la situation qu’ils mettent en jeu.
+- title: Décrochage
+  description: Cette pénalité s’applique lorsqu’un joueur sort subitement de son personnage sans raison. Peut aussi être encourue par un personnage trop peu défini ou ayant un ton qui ne lui correspond pas assez.
+- title: Manque d’écoute
+  description: Il y a manque d’écoute quand un personnage confond un lieu, une date, un nom, une contrainte physique amenée par l’impro, etc. Ex, appeler un joueur Pierre alors qu’il s’est précédemment présenté comme Paul, passer à travers une table, etc.
+- title: Mauvaise conduite
+  description: Sera sanctionné par cette punition un joueur au comportement déplacé, c’est-à-dire, qui contrevient au plaisir de jouer un match d’impro. Ceci peut se traduire par un manque de respect face aux autres personnes, face aux règles ou face à la politesse minimale que requiert un milieu social.
+- title: Non respect…
+  description: "Il y a trois types de non respect : du thème, de la catégorie et du nombre de joueurs."
+- title: Obstruction
+  description: Cette pénalité s’applique lorsqu’un ou plusieurs joueurs freinent systématiquement le déroulement d’une impro, soit en imposant ses idées, en monopolisant l’espace de jeu ou encore en jouant en mixte sans se préoccuper des joueurs de l’autre équipe, cela sans que l’impro en jeu ne le justifie.
+- title: Procédure illégale
+  description: Il y a procédure illégale si une ou des règles générales sont enfreintes.
+- title: Refus de passe
+  description: Cette pénalité s’applique dans les cas où une proposition est lancée et que les joueurs et/ou les personnages interpellés par cette proposition ne réagissent pas en conséquence où ne lancent pas de contre-proposition.
+- title: Retard de jeu
+  description: Pénalité à tout individu ou équipe au comportement trop lent au goût de l’arbitre et ce, peu importe le moment dans le match.
+- title: Rudesse
+  description: Cette pénalité s’applique surtout en mixte lorsqu’un joueur impose en tout début d’impro ses idées d’espace, de temps ou de personnage avant que l’autre joueur n’ait pu se définir un état personnel et/ou contextuel. Il est aussi possible d’attribuer cette punition à un joueur au jeu physique trop rude et ce, même si la situation semble le justifier.
+- title: Majorée
+  description: Cette pénalité double une pénalité déjà donnée au cours d’une même impro. Toutes les pénalités sont susceptibles d’être majorées."
