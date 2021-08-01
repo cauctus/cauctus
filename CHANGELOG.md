@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-beta.5](https://github.com/CorentinTh/cauctus/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2021-08-01)
+
+
+### Features
+
+* **about:** added contributors list base ([85a7286](https://github.com/CorentinTh/cauctus/commit/85a72862ee48fbf115607b1a3f4ef12c7a25d9a5))
+* **countdown:** prevent device screen lock when timer is on ([c436990](https://github.com/CorentinTh/cauctus/commit/c436990f36fe03b23bdf54de31c800be70eb47a2))
+* **meta:** added social share metas ([8246ca0](https://github.com/CorentinTh/cauctus/commit/8246ca02cab120cf6f29bd3432689061de82555c))
+* **page:** added /tongue-twisters ([8aabebe](https://github.com/CorentinTh/cauctus/commit/8aabebe3b4a1a47e2257ffa43160aa268ae2d2f5))
+
+
+### Bug Fixes
+
+* **deps:** bump actions/setup-node from 2.2.0 to 2.3.0 ([46decce](https://github.com/CorentinTh/cauctus/commit/46decce6dee200d15ab5bd3be4fa2c5c6c268f86))
+* **home:** added missing 'cursor: pointer' on countdown anchor ([e63606a](https://github.com/CorentinTh/cauctus/commit/e63606afa48244fec34671173bf4f4ee3c4ec6a8))
+
 ## [1.0.0-beta.4](https://github.com/CorentinTh/cauctus/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2021-07-26)
 
 
