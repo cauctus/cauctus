@@ -87,7 +87,7 @@ export default {
       lang: 'fr'
     },
     meta: {
-      theme_color: '#73d3a7'
+      theme_color: '#323232'
     }
   },
 
