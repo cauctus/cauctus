@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-list class="pa-0">
-      <v-list-item v-for="(contributor, i) in contributors" :key="i" :href="contributor.html_url">
+      <v-list-item v-for="(contributor, i) in contributors" :key="i" :href="contributor.html_url" target="_blank" rel="noopener noreferrer">
         <v-list-item-avatar>
           <v-img :src="contributor.avatar_url" />
         </v-list-item-avatar>
