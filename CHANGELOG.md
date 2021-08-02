@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-beta.6](https://github.com/CorentinTh/cauctus/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2021-08-02)
+
+
+### Features
+
+* **ci:** added more sections in changelog ([5b8cd82](https://github.com/CorentinTh/cauctus/commit/5b8cd82f0d79c19d61fc6569d44a6e0218d68f4e))
+* **page:** added /punishment page ([42dfed4](https://github.com/CorentinTh/cauctus/commit/42dfed4f4420dfbb5cad6762727b14884b00b8df))
+
+
+### Bug Fixes
+
+* **about:** added target=_blank to contributors list links ([edde996](https://github.com/CorentinTh/cauctus/commit/edde99608d9b544bf0acfd3e7493220339e71b6d))
+* **deps:** bump core-js from 3.15.2 to 3.16.0 ([dcf5d55](https://github.com/CorentinTh/cauctus/commit/dcf5d55ed767ff630c35ff15dcfdb4581bcbcb8e))
+* **deps:** bump vuetify from 2.5.7 to 2.5.8 ([23c69df](https://github.com/CorentinTh/cauctus/commit/23c69dfc08118e1091e6f11437e7ec469dd9eee1))
+* **deps:** changed prefix for dependabot commits ([17af1a8](https://github.com/CorentinTh/cauctus/commit/17af1a888da4c11b0d450af74421d36ca28e27fd))
+
+
+### Refactors
+
+* **i18n:** translated desktop toast warning ([934236c](https://github.com/CorentinTh/cauctus/commit/934236c3722d28ce169baf56bf0dc68ae1200f4e))
+* **img:** externalized svg from html ([9f671e6](https://github.com/CorentinTh/cauctus/commit/9f671e69a2bf7c90a03948df42273832c6b49e12))
+* **ui:** reverted to dark theme_color meta ([7b36097](https://github.com/CorentinTh/cauctus/commit/7b360979f21fa51fe25df7a79f7d280c7004e53a))
+
 ## [1.0.0-beta.5](https://github.com/CorentinTh/cauctus/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2021-08-01)
 
 
