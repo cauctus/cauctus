@@ -69,6 +69,7 @@ export default {
         theme_color: '#73d3a7'
       }
     ],
+    '@nuxtjs/svg',
     '@nuxtjs/axios',
     '@nuxtjs/sitemap' // Must stay last
   ],
