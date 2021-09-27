@@ -1,9 +1,12 @@
-import {capitalize, randFromArray} from '~/helpers/utils'
+// import {capitalize, randFromArray} from '~/helpers/utils'
+// import nouns from '~/data/nouns.yaml'
+// import adjectives from '~/data/adjectives.yaml'
+// const generateTheme = () => capitalize(`${randFromArray(nouns)} ${randFromArray(adjectives)}`)
 
-import nouns from '~/data/nouns.yaml'
-import adjectives from '~/data/adjectives.yaml'
+import {randFromArray} from '~/helpers/utils'
+import themes from '~/data/themes.yaml'
 
-const generateTheme = () => capitalize(`${randFromArray(nouns)} ${randFromArray(adjectives)}`)
+const generateTheme = () => randFromArray(themes)
 
 export {
   generateTheme
