@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-beta.7](https://github.com/CorentinTh/cauctus/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2021-09-27)
+
+
+### Refactors
+
+* **generator:** changed theme generator to use prebuilt themes ([b737b7a](https://github.com/CorentinTh/cauctus/commit/b737b7a8784fafb5cafbb8c23308633f347bc9be))
+
 ## [1.0.0-beta.6](https://github.com/CorentinTh/cauctus/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2021-08-02)
 
 
