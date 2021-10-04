@@ -59,7 +59,7 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-vue": "^7.18.0",
     "husky": "^7.0.2",
-    "less": "^4.0.0",
+    "less": "^4.1.2",
     "less-loader": "^7.1.0",
     "nuxt-property-decorator": "^2.9.1",
     "standard-version": "^9.3.1",
