@@ -56,7 +56,7 @@
     "@nuxtjs/svg": "^0.3.0",
     "@nuxtjs/vuetify": "^1.12.1",
     "eslint": "^7.32.0",
-    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-nuxt": "^3.0.0",
     "eslint-plugin-vue": "^7.20.0",
     "husky": "^7.0.4",
     "less": "^4.1.2",
