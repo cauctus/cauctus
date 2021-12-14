@@ -43,7 +43,7 @@
     "vuetify-toast-snackbar": "^0.6.1"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.16.3",
+    "@babel/eslint-parser": "^7.16.5",
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@mdi/js": "^6.5.95",
