@@ -40,16 +40,14 @@
 <script lang="ts">
 import {Component, Vue} from 'nuxt-property-decorator'
 import {mdiMagnify, mdiMenu} from '@mdi/js'
-import categories from '~/data/categories.yaml'
+import {categories} from '@cauctus/dataset'
 
 const normalize = (s: string) => s.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036F]/g, '')
-
-type CategoryList = { title: string; description: string; }[]
 
 @Component
 export default class Categories extends Vue {
   query = ''
-  categories: CategoryList = categories;
+  categories = categories;
   icons = {
     mdiMagnify,
     mdiMenu

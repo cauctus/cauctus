@@ -20,13 +20,13 @@
 <script lang="ts">
 import {Component, Vue} from 'nuxt-property-decorator'
 import {mdiRefresh} from '@mdi/js'
+import {categories} from '@cauctus/dataset'
 import {generateTheme} from '~/service/theme-generator'
 import BaseGenerator from '~/components/BaseGenerator.vue'
 import {randFromArray} from '~/helpers/utils'
 
 import places from '~/data/places.yaml'
 import characters from '~/data/characters.yaml'
-import categories from '~/data/categories.yaml'
 import actions from '~/data/actions.yaml'
 import feelings from '~/data/feelings.yaml'
 import events from '~/data/events.yaml'
