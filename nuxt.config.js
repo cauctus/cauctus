@@ -1,3 +1,5 @@
+/// <reference types="vue-plausible" />
+
 import {description, homepage} from './package.json'
 
 export default {
@@ -75,8 +77,8 @@ export default {
   ],
 
   plausible: {
-    domain: process.env.NUXT_ENV_PLAUSIBLE_DOMAIN,
-    apiHost: process.env.NUXT_ENV_PLAUSIBLE_API_HOST,
+    domain: process.env.NUXT_ENV_PLAUSIBLE_DOMAIN ?? '',
+    apiHost: process.env.NUXT_ENV_PLAUSIBLE_API_HOST ?? '',
     trackLocalhost: false
   },
 
