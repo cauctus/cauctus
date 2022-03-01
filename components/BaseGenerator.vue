@@ -38,7 +38,7 @@
           </v-dialog>
         </template>
 
-        <v-btn icon @click="refresh">
+        <v-btn icon @click="refresh()">
           <v-icon>{{ icons.mdiRefresh }}</v-icon>
         </v-btn>
       </div>
@@ -63,11 +63,15 @@ export default class BaseGenerator extends Vue {
   }
 
   created() {
-    this.refresh()
+    this.refresh({track: false})
   }
 
-  refresh() {
+  refresh({track} = {track: true}) {
     const generated = this.generator()
+
+    if (track) {
+      this.$plausible.trackEvent('generator:refresh', {props: {generator: this.title?.toLowerCase().split(' ')[0] ?? 'generator'}})
+    }
 
     if (typeof generated === 'string') {
       this.value = generated
