@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-beta.8](https://github.com/CorentinTh/cauctus/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2022-03-09)
+
+
+### Features
+
+* **tracker:** monitoring generator refreshing ([0c4b7e2](https://github.com/CorentinTh/cauctus/commit/0c4b7e26a42c2e9995737b662c9418d771b6fb42))
+
+
+### Bug Fixes
+
+* **tongue-twisters:** removed weird one ([33f3276](https://github.com/CorentinTh/cauctus/commit/33f327601feaa6c8e8ffeee0eac7540871f861ec))
+* **track:** trackEvent only if plausible exists ([a1131bd](https://github.com/CorentinTh/cauctus/commit/a1131bdac6e1bfaa65b84ee160dacaaf80fd7a3f))
+
+
+### Refactors
+
+* **categories:** using @cauctus/dataset as categorie list ([7f0293c](https://github.com/CorentinTh/cauctus/commit/7f0293c9bcf4ec784fccdd6aded8fcdff2a2611e))
+
 ## [1.0.0-beta.7](https://github.com/CorentinTh/cauctus/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2021-09-27)
 
 
