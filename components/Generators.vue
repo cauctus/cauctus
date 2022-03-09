@@ -69,7 +69,7 @@ export default class Generators extends Vue {
   ]
 
   refreshAll() {
-    this.$plausible.trackEvent('generator:refreshAll');
+    this.$plausible?.trackEvent('generator:refreshAll');
     (this.$refs.gens as BaseGenerator[]).forEach(el => el.refresh({track: false}))
   }
 }

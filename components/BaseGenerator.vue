@@ -70,7 +70,7 @@ export default class BaseGenerator extends Vue {
     const generated = this.generator()
 
     if (track) {
-      this.$plausible.trackEvent('generator:refresh', {props: {generator: this.title?.toLowerCase().split(' ')[0] ?? 'generator'}})
+      this.$plausible?.trackEvent('generator:refresh', {props: {generator: this.title?.toLowerCase().split(' ')[0] ?? 'generator'}})
     }
 
     if (typeof generated === 'string') {

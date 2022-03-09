@@ -1,6 +1,6 @@
 /// <reference types="vue-plausible" />
 
-import {description, homepage} from './package.json'
+import { description, homepage } from './package.json'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -15,24 +15,20 @@ export default {
     titleTemplate: '%s - Cauctus',
     title: 'Cauctus',
     meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: description ?? ''},
-      {name: 'format-detection', content: 'telephone=no'}
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: description ?? '' },
+      { name: 'format-detection', content: 'telephone=no' }
     ],
-    link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '~/assets/global.less'
-  ],
+  css: ['~/assets/global.less'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    {src: '~/plugins/pwa-update.plugin.ts', mode: 'client'},
+    { src: '~/plugins/pwa-update.plugin.ts', mode: 'client' },
     '~/plugins/vuetify-toast-snackbar.plugin.ts'
   ],
 
@@ -77,8 +73,8 @@ export default {
   ],
 
   plausible: {
-    domain: process.env.NUXT_ENV_PLAUSIBLE_DOMAIN ?? '',
-    apiHost: process.env.NUXT_ENV_PLAUSIBLE_API_HOST ?? '',
+    domain: process.env.NUXT_ENV_PLAUSIBLE_DOMAIN,
+    apiHost: process.env.NUXT_ENV_PLAUSIBLE_API_HOST,
     trackLocalhost: false
   },
 
@@ -100,11 +96,7 @@ export default {
       iconfont: 'mdiSvg'
     },
     treeShake: {
-      components: [
-        'VSnackbar',
-        'VBtn',
-        'VIcon'
-      ]
+      components: ['VSnackbar', 'VBtn', 'VIcon']
     },
     defaultAssets: {
       icons: false,
@@ -113,7 +105,7 @@ export default {
     customVariables: ['~/assets/variables.scss'],
     theme: {
       dark: false,
-      options: {customProperties: true},
+      options: { customProperties: true },
       themes: {
         light: {
           primary: '#73d3a7',
