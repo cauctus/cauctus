@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-beta.9](https://github.com/CorentinTh/cauctus/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2022-03-24)
+
+
+### Features
+
+* **about:** added a sponsor speech ([c044209](https://github.com/CorentinTh/cauctus/commit/c044209bba0767caa37a702ca8f4d6d8927261b1))
+* **generator:** added tooltip on generator result ([0d8d3a8](https://github.com/CorentinTh/cauctus/commit/0d8d3a80848387d71e864bb79bf0dca643ae09fb))
+
+
+### Refactors
+
+* **about:** changed the /about page layout ([e8cfe7f](https://github.com/CorentinTh/cauctus/commit/e8cfe7f79af7408a9a9b141b7e4ab7ac30b042e3))
+* **menu:** replaced menu with custom one ([0c779ca](https://github.com/CorentinTh/cauctus/commit/0c779ca37281c71c0c01aabdd80a9f91cd6c8d43))
+
 ## [1.0.0-beta.8](https://github.com/CorentinTh/cauctus/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2022-03-09)
 
 
