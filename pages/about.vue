@@ -15,15 +15,15 @@
     <template slot="content">
       <v-card>
         <v-card-text>
+          <h2>À propos de Cauctus</h2>
+
           <p class="text-justify">
-            &nbsp;&nbsp;&nbsp;&nbsp;
             <nuxt-link to="/">
               Cauctus
             </nuxt-link> est une application publique open source (sous license MIT) développée par
             <a href="https://github.com/CorentinTh" target="_blank" rel="noopener noreferrer">Corentin Thomasset</a> visant a mettre a disposition des ressources pour l'organisation d'ateliers ou de spectacles de théâtre d'improvisation.
           </p>
           <p class="text-justify">
-            &nbsp;&nbsp;&nbsp;&nbsp;
             Si vous avez trouvé un bug, quelque chose de cassé ou qui ne fonctionne pas comme prévu, ou bien que vous souhaiteriez voir une nouvelle fonctionnalité, veuillez remplir un rapport de bug ou une demande de feature
             <a target="_blank" rel="noopener noreferrer" href="https://github.com/CorentinTh/cauctus/issues/new/choose">ici</a> ou me contacter directement par mail <SecureEmail email="contact@cauctus.net" />.
           </p>
@@ -110,7 +110,16 @@ h1{
   font-weight: 300;
   text-transform: uppercase;
 }
+
+a {
+  text-decoration: none;
+}
+
 ::v-deep {
+  .secure-email {
+    text-decoration: none;
+  }
+
   .icons-button .v-btn__content{
     color: var(--v-anchor-base);
   }
