@@ -15,31 +15,7 @@
           </div>
         </div>
 
-        <v-list>
-          <div v-for="(section, i) in navigation" :key="i">
-            <v-subheader v-if="section.title">
-              {{ section.title }}
-            </v-subheader>
-
-            <v-list-item
-              v-for="(item, j) in section.items"
-              :key="j"
-              :to="item.to"
-              link
-              nuxt
-              router
-              exact
-            >
-              <v-list-item-action>
-                <v-icon>{{ item.icon }}</v-icon>
-              </v-list-item-action>
-
-              <v-list-item-content>
-                <v-list-item-title>{{ item.text }}</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-          </div>
-        </v-list>
+        <NavigationMenu :menu="navigation" />
 
         <v-footer absolute padless class="custom-footer">
           <div>
@@ -81,11 +57,13 @@ import {mdiCounter, mdiHeart, mdiHome, mdiInformation, mdiShape, mdiAccountVoice
 import {version} from '~/package.json'
 import WavyBackground from '~/assets/wavy-background.svg?inline'
 import LogoWithIcon from '~/assets/logo-with-icon.svg?inline'
+import NavigationMenu from '~/components/NavigationMenu.vue'
 
 @Component({
   components: {
     WavyBackground,
-    LogoWithIcon
+    LogoWithIcon,
+    NavigationMenu
   }
 })
 export default class Default extends Vue {
@@ -185,11 +163,6 @@ export default class Default extends Vue {
 
 .v-navigation-drawer__content {
   .pretty-scrollbar;
-
-  .v-list-item--active {
-    color: var(--v-anchor-base) !important;
-    border-left: 3px solid var(--v-primary-base);
-  }
 }
 
 .theme--light.v-footer.custom-footer {
