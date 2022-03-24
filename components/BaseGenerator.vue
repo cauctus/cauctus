@@ -7,9 +7,18 @@
       {{ title }}
     </div>
     <div class="generator-result-wrapper">
-      <div class="generator-result">
-        {{ value }}
-      </div>
+      <v-tooltip top>
+        <template #activator="{ on, attrs }">
+          <div
+            class="generator-result"
+            v-bind="attrs"
+            v-on="on"
+          >
+            {{ value }}
+          </div>
+        </template>
+        <span>{{ value }}</span>
+      </v-tooltip>
       <div class="button-wrapper">
         <template v-if="tooltip">
           <v-dialog
