@@ -30,6 +30,7 @@
     "release": "standard-version"
   },
   "dependencies": {
+    "@autheur/generator": "^1.1.2",
     "@cauctus/dataset": "^1.1.0",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/markdownit": "^2.0.0",

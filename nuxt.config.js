@@ -131,11 +131,18 @@ export default {
   build: {
     extractCSS: true,
     extend(config) {
-      config.module.rules.push({
-        test: /\.ya?ml$/,
-        type: 'json', // Required by Webpack v4
-        use: 'yaml-loader'
-      })
+      config.module.rules.push(
+        {
+          test: /\.ya?ml$/,
+          type: 'json', // Required by Webpack v4
+          use: 'yaml-loader'
+        },
+        {
+          include: /node_modules/,
+          test: /\.mjs$/,
+          type: 'javascript/auto'
+        }
+      )
     }
   },
 
